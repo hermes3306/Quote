@@ -65,21 +65,17 @@ foreach ($props['subj']  as $sub) {
 
 $todaysub = rand(0, count($subj) -1 );
 $quotesubj = $subj[$todaysub];
-echo ("Today subect : " . $quotesubj);
 
 
 $dir = $quote_home . "/quote/" . $subj[$todaysub] ;
-echo ("Quote dir: " . $dir);
 
 $files = scandir($dir);
 $files = array_diff($files, array('..','.'));
 
-print_r($files);
 $cnt = count($files);
 $today = rand(0, $cnt-1);
 
 $url		= $props['url'] . "/" . $subj[$todaysub] . "/" . $files[$today];
-echo ("Today quote is : " . $url);
 
 /*
  * Email Subject and Body
