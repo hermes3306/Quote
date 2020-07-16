@@ -73,9 +73,20 @@ $files = scandir($dir);
 $files = array_diff($files, array('..','.'));
 
 $cnt = count($files);
-$today = rand(0, $cnt-1);
+$today = rand(2, $cnt+1); /* array key begin with 2 */ 
+
+/*
+echo "\nCnt:" . $cnt;
+echo "\nInx:" . $today;
+echo "\n";
+print_r($files);
+*/
+
+
 
 $url		= $props['url'] . "/" . $subj[$todaysub] . "/" . $files[$today];
+
+echo $url;
 
 /*
  * Email Subject and Body
