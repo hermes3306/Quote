@@ -3,7 +3,7 @@
 	$pname = $_GET['name'];
     $chartdata = "";
     $db     =       new SQLite3($dbfile);
-	$sql 	= "select subject s, count(subject) c from quote group by subject having name like '" . $pname . "'";
+	$sql 	= "select subject s, count(subject) c from quote group by name,subject having name like '" . $pname . "'";
 
     $res = $db->query($sql);
 
