@@ -34,7 +34,7 @@
 ?>
         ]);
         var options = {
-          title: '<?php echo $pname?>'
+          title: '<?php echo $k;?>'
         };
         var chart = new google.visualization.PieChart(document.getElementById('<?php echo $k; ?>'));
         chart.draw(data, options);
