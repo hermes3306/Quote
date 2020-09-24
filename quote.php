@@ -45,7 +45,7 @@ $DayN		= strtotime(date("Y-m-d"));
 $N		= ($DayN - $Day0)/60/60/24;
 $Name	= $props['Name'];
 
-if($N <0 or $N > 21) {
+if($N <0 or $N > 365) {
 	echo "Quote for " . $Name . " not started or finished! \n";
 	echo "Day # is " . $N . " \n";
 	exit();
