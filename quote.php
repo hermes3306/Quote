@@ -119,16 +119,18 @@ $db->exec("CREATE TABLE IF NOT EXISTS Quote (
 	status  text,
 	created datetime,
 	cr_date text,
+	url		text,	
 	cr_time text)");
 
-$stmt = $db->prepare("INSERT INTO Quote (name, subject, day, status, cr_date, cr_time, created) 
-			VALUES (:name, :subject, :day, :status, :cr_date, :cr_time, current_timestamp)");
+$stmt = $db->prepare("INSERT INTO Quote (name, subject, day, status, cr_date, cr_time, created, url) 
+			VALUES (:name, :subject, :day, :status, :cr_date, :cr_time, current_timestamp, :url)");
 $stmt->bindValue(':name', $props['Name']);
 $stmt->bindValue(':subject', $quotesubj );
 $stmt->bindValue(':day', $N );
 $stmt->bindValue(':status', 'OK');
 $stmt->bindValue(':cr_date', date('Y-m-d'));
 $stmt->bindValue(':cr_time', date('G:i:s'));
+$stmt->bindValue(':url', $url);
 $stmt->execute();
 $db->close();
 

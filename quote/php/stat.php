@@ -10,6 +10,7 @@ echo "
 <td>Last Day</td>
 <td>Count</td>
 <td>Remains</td>
+<td>Hist</td>
 </tr> ";
 
 $db     =       new SQLite3($dbfile);
@@ -19,7 +20,8 @@ while ($row = $res->fetchArray()) {
                 echo "<tr>	<td>{$row['name']}</td> 
 			  	<td>{$row['d']}</td>
 			  	<td>{$row['m']}</td>
-				<td>{$row['r']}</td> </tr>";
+				<td>{$row['r']}</td>
+				<td><a href=hist.php?name={$row['name']}>view</a></td> </tr>";
 }
 $db->close();
 echo "</table>
