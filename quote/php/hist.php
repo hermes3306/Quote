@@ -24,7 +24,9 @@ $sql = "SELECT name, day, subject, cr_date, cr_time, url FROM quote  where url n
 
 $res = $db->query($sql);
 while ($row = $res->fetchArray()) {
-				$_url = str_replace("img", "img width=500", $row['url']);
+                $_url = str_replace("img", "img width=500", $row['url']);
+                $_url = str_replace("ezehub.club","joonho.online", $_url);
+                $_url = str_replace("ez-hub.club","joonho.online", $_url);
                 echo "<tr>  <td>{$row['name']}</td>
                 <td>{$row['subject']}</td>
                 <td>{$row['day']}</td>

@@ -20,6 +20,9 @@ $db     =       new SQLite3($dbfile);
 $res = $db->query('SELECT * FROM Quote order by cr_date desc, cr_time desc ');
 while ($row = $res->fetchArray()) {
                 $_url = str_replace("img", "img width=500", $row['url']);
+                $_url = str_replace("ezehub.club","joonho.online", $_url);
+                $_url = str_replace("ez-hub.club","joonho.online", $_url);
+
                 echo "<tr>  <td>{$row['name']}</td>
                 <td>{$row['day']}</td>
                 <td>{$row['subject']}</td>
